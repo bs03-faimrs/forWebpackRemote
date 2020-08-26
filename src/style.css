@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url('./Poppins-BoldItalic.ttf') format('ttf');
+    font-style: normal;
+
+}
+
+.hello {
+    color: red;
+    font-family: 'Poppins', sans-serif;
+    background: url('./background.png');
+    background-repeat: no-repeat;
+}

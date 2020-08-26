@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<note>
+    <heading>An XML Example built loaded with xml-loader</heading>
+    <body>Chaining these module loaders is such fun</body>
+</note>
