@@ -1,60 +1,21 @@
 const path = require('path');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: "./src/index.js",
-    output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, 'dist')
+    entry: {
+        app: './src/index.js',
+        print: './src/print.js',
     },
-
-    //Loaders
-    module: {
-        rules: [
-
-        //CSS Loaders
-
-          {
-            test: /\.css$/,
-            use: [
-              'style-loader',
-              'css-loader',
-            ],
-          },
-
-          //Loading images
-
-          {
-            test: /\.(png|svg|jpg|grif)$/,
-            use: [
-                'file-loader',
-            ],
-          },
-
-          //Loading fonts
-
-          {
-            test: /\.(woff|woff2|eot|ttf|otf)$/,
-            use: [
-                'file-loader',
-            ],
-          },
-
-          //Loading data
-
-          {
-             test: /\.(csv|tsv)$/,
-             use: [
-               'csv-loader',
-             ],
-           },
-           {
-             test: /\.xml$/,
-             use: [
-               'xml-loader',
-             ],
-           },
-        ],
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'Output Management'
+        }),
+    ],
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist')
     },
 };
 

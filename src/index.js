@@ -1,23 +1,16 @@
 import _ from 'lodash';
-import './style.css';
-import Photo from './background.png';
-import Data from './data.xml';
-import myJson from './myJson.json'
+import printMe from './print.js';
 
 function component() {
 const element = document.createElement('div');
+const btn = document.createElement('button')
 
 element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-element.classList.add('hello');
 
-const photo = new Image();
-photo.src = Photo;
+btn.innerHTML = 'Click to log to console';
+btn.onclick = printMe;
 
-element.appendChild(photo);
-
-console.log(Data);
-
-console.log(myJson);
+element.appendChild(btn);
 
 return element;
 }
